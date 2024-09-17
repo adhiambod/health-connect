@@ -1,0 +1,22 @@
+# Virtual environment
+myenv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django secret key
+.env
+
+# Database
+db.sqlite3
+
+# macOS system files
+.DS_Store
+
+# Logs
+*.log
+
+# Ignore node_modules if using JS-related dependencies
+node_modules/
