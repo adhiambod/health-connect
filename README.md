@@ -3,17 +3,21 @@
 HealthConnect
 HealthConnect is a mobile platform designed to revolutionize healthcare access in Kenya by providing telemedicine, appointment scheduling, and health information. The platform aims to address limited access, high costs, and inefficient systems in the healthcare sector.
 
-Features
+Features:
+
 Telemedicine: Video consultations with healthcare professionals.
 Appointment Scheduling: Seamlessly book and manage appointments.
 Health Information: Access to health articles and tips.
-Target Market
+
+Target Market:
+
 Urban & Rural Populations: Addressing access issues in both urban and rural areas.
 Tech-Savvy Youth: Young adults using mobile health apps.
 Chronic Disease Patients: Needing regular monitoring and follow-up.
+
 Tech Stack
 Backend: Django, Django REST Framework
-Frontend: [Add your frontend technology here]
+Frontend: 
 Database: PostgreSQL (or your chosen database)
 Video Consultations: [Integration with Zoom, Jitsi, or other video conferencing tools]
 Authentication: [JWT, OAuth, etc.]
@@ -23,23 +27,24 @@ Python 3.x
 Django
 Django REST Framework
 PostgreSQL (or your chosen database)
+
 Setup
 Clone the Repository
 
 bash
-Copy code
-git clone https://github.com/yourusername/healthconnect.git
+
+git clone https://github.com/adhiambod/healthconnect.git
 cd healthconnect
 Create a Virtual Environment
 
 bash
-Copy code
+
 python -m venv env
 source env/bin/activate  # On Windows: env\Scripts\activate
 Install Dependencies
 
 bash
-Copy code
+
 pip install -r requirements.txt
 Configure the Database
 
@@ -48,18 +53,18 @@ Update healthconnect/settings.py with your database configuration.
 Apply Migrations
 
 bash
-Copy code
+
 python manage.py makemigrations
 python manage.py migrate
 Create a Superuser
 
 bash
-Copy code
+
 python manage.py createsuperuser
 Run the Development Server
 
 bash
-Copy code
+
 python manage.py runserver
 Access the application at http://localhost:8000.
 
@@ -93,20 +98,20 @@ Fork the Repository
 Create a New Branch
 
 bash
-Copy code
+
 git checkout -b feature/your-feature
 Make Your Changes
 
 Commit Your Changes
 
 bash
-Copy code
+
 git add .
 git commit -m "Add feature: your feature"
 Push to Your Fork
 
 bash
-Copy code
+
 git push origin feature/your-feature
 Create a Pull Request
 
