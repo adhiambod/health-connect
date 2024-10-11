@@ -1,17 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
 from .models import UserProfile, Doctor, Appointment
 from .forms import UserProfileForm, AppointmentForm
 
 def profile_view(request):
+    profile = get_object_or_404(UserProfile, user=request.user)
     return render(request, 'profile.html', {'profile': profile})
 
-# New view for the homepage
 def home_view(request):
     return HttpResponse("Welcome to HealthConnect!")
+
 def update_profile_view(request):
-    profile = UserProfile.objects.get(user=request.user)
+    profile = get_object_or_404(UserProfile, user=request.user)
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
@@ -30,7 +30,7 @@ def book_appointment_view(request):
         form = AppointmentForm(request.POST)
         if form.is_valid():
             appointment = form.save(commit=False)
-            appointment.user = UserProfile.objects.get(user=request.user)
+            appointment.user = get_object_or_404(UserProfile, user=request.user)
             appointment.save()
             return redirect('appointment_list')
     else:
