@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}HealthConnect{% endblock %}</title>
+
+    <!-- Link to the favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>HealthConnect</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'profile' %}">Profile</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+                <li><a href="{% url 'doctors_list' %}">Doctors</a></li>
+                <li><a href="{% url 'appointment_list' %}">Appointments</a></li>
+                <li><a href="{% url 'book_appointment' %}">Book Appointment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+        <p>&copy; 2024 HealthConnect. All rights reserved.</p>
+    </footer>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
